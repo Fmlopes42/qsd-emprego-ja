@@ -1,0 +1,15 @@
+<%= form_for @job do |f| %>
+  <dl>
+    <dt><%= f.label :title, 'Título' %></dt>
+    <dd><%= f.text_field :title %></dd>
+    <dt><%= f.label :location, 'Local' %></dt>
+    <dd><%= f.text_field :location %></dd>
+    <dt><%= f.label :category, 'Categoria' %></dt>
+    <dd><%= f.text_field :category %></dd>
+    <dt><%= f.label :company, 'Empresa' %></dt>
+    <dd><%= f.text_field :company %></dd>
+    <dt><%= f.label :description, 'Descrição' %></dt>
+    <dd><%= f.text_field :description %></dd>
+  </dl>
+  <%= f.submit text_submit %>
+<% end %>
