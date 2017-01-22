@@ -11,5 +11,7 @@
     <dt><%= f.label :description, 'Descrição' %></dt>
     <dd><%= f.text_field :description %></dd>
   </dl>
+  <%= f.label :featured, 'Destaque' %>
+  <%= f.check_box :featured %>
   <%= f.submit text_submit %>
 <% end %>

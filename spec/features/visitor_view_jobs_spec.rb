@@ -13,6 +13,7 @@ feature 'Visitor view jobs on home page' do
     expect(page).to have_content('Vaga de Dev')
     expect(page).to have_content('Campus Code')
     expect(page).to have_content('São Paulo')
+    expect(page).not_to have_content('Destaque')
   end
 
   scenario 'and view a list of jobs' do
@@ -26,7 +27,8 @@ feature 'Visitor view jobs on home page' do
                              category: 'UX',
                              company: 'Facebook',
                              description: 'UX com experiência em redes sociais',
-                             location: 'São Paulo')
+                             location: 'São Paulo',
+                             featured: true)
     visit root_path
 
     expect(page).to have_css('h1',text: job.title)
@@ -34,6 +36,7 @@ feature 'Visitor view jobs on home page' do
     expect(page).not_to have_content(job.description)
     expect(page).to have_css('h1',text: another_job.title)
     expect(page).to have_content(another_job.company)
+    expect(page).to have_css('strong', text: 'Destaque')
     expect(page).not_to have_content(another_job.description)
   end
 end
