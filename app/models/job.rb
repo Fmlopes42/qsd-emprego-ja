@@ -1,4 +1,4 @@
 class Job < ApplicationRecord
-  validates :title, :category, :company, :description, :location, presence: true
+  validates :title, :category, :company_id, :description, :location, presence: true
   belongs_to :company
 end

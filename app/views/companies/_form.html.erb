@@ -1,0 +1,13 @@
+<%= form_for @company do |f| %>
+  <dl>
+    <dt><%= f.label :name, 'Nome' %></dt>
+    <dd><%= f.text_field :name %></dd>
+    <dt><%= f.label :location, 'Local' %></dt>
+    <dd><%= f.text_field :location %></dd>
+    <dt><%= f.label :mail, 'Email' %></dt>
+    <dd><%= f.text_field :mail %></dd>
+    <dt><%= f.label :phone, 'Telefone' %></dt>
+    <dd><%= f.text_field :phone %></dd>
+  </dl>
+  <%= f.submit text_submit %>
+<% end %>
