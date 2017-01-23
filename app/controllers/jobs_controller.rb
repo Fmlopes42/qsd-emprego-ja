@@ -1,12 +1,19 @@
 class JobsController < ApplicationController
+
   def new
     @job = Job.new
+    @companies = Company.all
   end
 
   def create
     @job = Job.new(job_params)
-    @job.save
-    redirect_to @job
+    if @job.save
+      redirect_to @job
+    else
+      flash.now[:notice] = "Não foi possível criar a vaga"
+      @companies = Company.all
+      render :new
+    end
   end
 
   def show

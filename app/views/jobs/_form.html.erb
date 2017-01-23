@@ -1,3 +1,7 @@
+<% if flash.now[:notice] %>
+<p><%= flash.now[:notice] %></p>
+<% end %>
+
 <%= form_for @job do |f| %>
   <dl>
     <dt><%= f.label :title, 'Título' %></dt>
@@ -7,7 +11,7 @@
     <dt><%= f.label :category, 'Categoria' %></dt>
     <dd><%= f.text_field :category %></dd>
     <dt><%= f.label :company_id, 'Empresa' %></dt>
-    <dd><%= f.collection_select(:company_id, Company.all, :id, :name) %></dd>
+    <dd><%= f.collection_select(:company_id, @companies, :id, :name) %></dd>
     <dt><%= f.label :description, 'Descrição' %></dt>
     <dd><%= f.text_field :description %></dd>
   </dl>

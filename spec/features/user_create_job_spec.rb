@@ -59,4 +59,11 @@ feature 'User create jobs' do
     expect(page).to have_css('strong', text: 'Destaque')
   end
 
+  scenario 'and should fill all fields' do
+    visit new_job_path
+
+    click_on 'Criar Vaga'
+
+    expect(page).to have_content 'Não foi possível criar a vaga'
+  end
 end
