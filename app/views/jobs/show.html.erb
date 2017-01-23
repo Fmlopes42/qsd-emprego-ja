@@ -1,9 +1,13 @@
 <h1><%= @job.title %></h1>
-</div>
- <%= @job.category %>
- <%= @job.company %>
- <%= @job.description %>
- <%= @job.location %>
- <strong><%= 'Destaque' if @job.featured? %></strong>
-</div>
+</dl>
+ <dt>Categoria:</dt>
+ <dd><%= @job.category %></dd>
+ <dt>Empresa:</dt>
+ <dd><%= @job.company.name %></dd>
+ <dt>Descrição:</dt>
+ <dd><%= @job.description %></dd>
+ <dt>Local:</dt>
+ <dd><%= @job.location %></dd>
+</dl>
+<strong><%= 'Destaque' if @job.featured? %></strong>
 <%= link_to 'Voltar', root_path %>

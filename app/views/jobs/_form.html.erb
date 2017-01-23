@@ -6,8 +6,8 @@
     <dd><%= f.text_field :location %></dd>
     <dt><%= f.label :category, 'Categoria' %></dt>
     <dd><%= f.text_field :category %></dd>
-    <dt><%= f.label :company, 'Empresa' %></dt>
-    <dd><%= f.text_field :company %></dd>
+    <dt><%= f.label :company_id, 'Empresa' %></dt>
+    <dd><%= f.collection_select(:company_id, Company.all, :id, :name) %></dd>
     <dt><%= f.label :description, 'Descrição' %></dt>
     <dd><%= f.text_field :description %></dd>
   </dl>
