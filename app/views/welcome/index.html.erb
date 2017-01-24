@@ -1,11 +1,20 @@
 <h1>Emprego Já</h1>
-<% @jobs.each do |job| %>
-  <h1><%= link_to job.title, job %></h1>
-  <dl>
-    <dt>Empresa:</dt>
-    <dd><%= job.company.name %></dd>
-    <dt>Local:</dt>
-    <dd><%= job.location %></dd>
-  </dl>
-  <p><strong><%= 'Destaque' if job.featured? %></strong></p>
-<% end %>
+
+<section id="companies">
+  <% @companies.each do |company| %>
+    <%= link_to company.name, company %>
+  <% end %>
+</section>
+
+<section id="jobs">
+  <% @jobs.each do |job| %>
+    <h1><%= link_to job.title, job %></h1>
+    <dl>
+      <dt>Empresa:</dt>
+      <dd><%= job.company.name %></dd>
+      <dt>Local:</dt>
+      <dd><%= job.location %></dd>
+    </dl>
+    <p><strong><%= 'Destaque' if job.featured? %></strong></p>
+  <% end %>
+</section>

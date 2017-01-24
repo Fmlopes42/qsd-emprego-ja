@@ -1,9 +1,32 @@
-<h1><%= @company.name %></h1>
-<dl>
-  <dt>Local</dt>
-  <dd><%= @company.location %></dd>
-  <dt>Email</dt>
-  <dd><%= @company.mail %></dd>
-  <dt>Telefone</dt>
-  <dd><%= @company.phone %></dd>
-</dl>
+<section id="company">
+  <h1><%= @company.name %></h1>
+  <dl>
+    <dt>Local</dt>
+    <dd><%= @company.location %></dd>
+    <dt>Email</dt>
+    <dd><%= @company.mail %></dd>
+    <dt>Telefone</dt>
+    <dd><%= @company.phone %></dd>
+  </dl>
+</section>
+
+<section id="jobs">
+  <% if @company.jobs.empty? %>
+    <h1>Nenhuma vaga disponível</h1>
+
+  <% else %>
+    <% @company.jobs.each  do |job| %>
+    <dl>
+      <dt>Título:</dt>
+      <dd><%= job.title %></dd>
+      <dt>Cateogia:</dt>
+      <dd><%= job.category %></dd>
+      <dt>Descrição:</dt>
+      <dd><%= job.description %></dd>
+    </dl>
+    <% end %>
+
+  <% end %>
+</section>
+
+<%= link_to "Voltar", root_path %>
