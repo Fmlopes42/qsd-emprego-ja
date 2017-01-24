@@ -7,8 +7,10 @@ feature 'Visitor view jobs on home page' do
                              mail: 'contato@campus.com.br',
                              phone: '2369-3476')
 
+    category = Category.create(name: 'Desenvolvedor')
+
     Job.create(title: 'Vaga de Dev',
-               category: 'Desenvolvedor',
+               category: category,
                company: company,
                description: 'Dev Junior Rails com ao menos um projeto',
                location: 'São Paulo')
@@ -27,15 +29,17 @@ feature 'Visitor view jobs on home page' do
                              mail: 'contato@campus.com.br',
                              phone: '2369-3476')
 
+    category = Category.create(name: 'Desenvolvedor')
+
     job = Job.create(title: 'Vaga de Dev',
-               category: 'Desenvolvedor',
+               category: category,
                company: company,
                description: 'Dev Junior Rails com ao menos um projeto',
                location: 'São Paulo')
 
     another_job = Job.create(title: 'UX Senior',
-                             category: 'UX',
                              company: company,
+                             category: category,
                              description: 'UX com experiência em redes sociais',
                              location: 'São Paulo',
                              featured: true)

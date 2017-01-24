@@ -12,6 +12,8 @@
     <dd><%= f.text_field :category %></dd>
     <dt><%= f.label :company_id, 'Empresa' %></dt>
     <dd><%= f.collection_select(:company_id, @companies, :id, :name) %></dd>
+    <dt><%= f.label :category_id, 'Categoria' %></dt>
+    <dd><%= f.collection_select(:category_id, @categories, :id, :name) %></dd>
     <dt><%= f.label :description, 'Descrição' %></dt>
     <dd><%= f.text_field :description %></dd>
   </dl>
